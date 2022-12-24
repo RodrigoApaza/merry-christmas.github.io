@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Feliz Navidad Alina :3</title>
+
+    <style>
+        body {
+            background: black;
+            display: grid;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        h1 {
+            color: greenyellow;
+        }
+
+        p {
+            color: teal;
+        }
+
+        .estrella {
+            font-size: 90px;
+            color: yellow;
+            animation: colores 1s infinite;
+            animation: rotation 1s infinite linear ;
+            
+        }
+
+        
+
+        .rojo {
+            color: red;
+            transition: all 1.5s;
+            font-size: 30px;
+        }
+
+        @keyframes colores {
+            0%{ color: red; }
+            33% { color: green; }
+            66% { color: red;}
+            100%{ color: yellow;}
+        }
+
+        @keyframes rotation {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .flork1 img {
+            position: absolute;
+            background-size: cover;
+            top: 65%;
+            left: 75%;
+            width: 15%;
+            animation: expand 4s infinite;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .flork2 img {
+            position: absolute;
+            left: 5%;
+            top: 65%;
+            width: 10%;
+            animation: expand 4s infinite;
+        }
+
+        .cat img {
+            position: absolute;
+            left: 5%;
+            top: 10%;
+            width: 5%;
+            animation: expand2 4s infinite;
+            rotate: 10deg;
+        }
+
+        .santa img {
+            position: absolute;
+            left: 80%;
+            top: 10%;
+            width: 5%;
+            animation: expand2 4s infinite;
+            rotate: 10deg;
+        }
+
+        @keyframes expand {
+            0% {
+                width: 20%;
+            }
+            50% {width: 24%;}
+            100% {
+                width: 20%;
+            }
+        }
+
+        @keyframes expand2 {
+            0% {
+                width: 13%;
+            }
+            50% {width: 15%;}
+            100% {
+                width: 13%;
+            }
+        }
+
+        .mensaje{
+            font-size: 15px;
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div class="flork1">
+        <img src="flork1.png" alt="">
+    </div>
+
+    <div class="flork2">
+        <img src="flork2.png" alt="">
+    </div>
+
+    <div class="cat">
+        <img src="cat.jpg" alt="">
+    </div>
+
+    <div class="santa">
+        <img src="santa.png" alt="">
+    </div>
+
+    <div class="estrella">
+        *
+    </div>
+    <div id="arbol">
+
+    </div>
+    <h1>Feliz Navidad Alina :3</h1>
+    <class class="mensaje">
+        <p> En esta ocasión especial :3</p>
+        <p> deseo que tengas un hermoso día, </p>
+        <p> tus sueños se hagan realidad,</p>
+        <p> y mucha suerte en tus estudios, se que tus metas se cumplirán :3</p>
+        <p style="color: crimson;">La navidad es la excusa perfecta para expresar el cariño a las personas más queridas</p>
+        <p style="color: crimson;">y como tu eres muy importante para mi, una y mil veces te digo:</p>
+        <p style="color: crimson"> "Feliz navidad Alina , te quiero mucho :3"</p>
+        <p style="color: deeppink;">(PD: Hoy no pude darte tu regalo, así que lo guardaré hasta nuestro proximo encuentro :3)</p>
+        
+    </class>
+    <script>
+        var hojas = "";
+        [10, 2].forEach(row => {
+            new Array(row).fill('').forEach((v, i) => {
+
+                hojas += ([
+                    ...Array(9-i).fill("<span> </span>"),
+                    ...Array(1+i*2).fill("<span class='rojo'>*</span>"),
+                    ...Array(9-i).fill("<span> </span>")
+                ].join(''));
+                hojas += "<br>";
+            })
+        });
+        document.getElementById("arbol").innerHTML = hojas;
+        let animacion = document.querySelectorAll(".rojo");
+        animacion.innerHTML = hojas;
+        
+        function animar(){
+            for( var i=0; i < animacion.length; i++){
+                let tiempo = i/20 + 1; 
+                animacion[i].style.animation = "colores "+tiempo+"s infinite";
+                
+            }
+            
+        }
+
+        window.addEventListener('load', animar);
+        
+    </script>
+</body>
+</html>
