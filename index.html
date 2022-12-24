@@ -114,12 +114,17 @@
         .mensaje{
             font-size: 15px;
         }
+
+        
         
     </style>
 
 </head>
 <body>
-    <audio src="song.mp3" autoplay="autoplay"></audio>
+    <!-- <audio src="song.mp3" autoplay="autoplay" ></audio> -->
+
+    
+
     <div class="flork1">
         <img src="flork1.png" alt="">
     </div>
@@ -153,7 +158,21 @@
         <p style="color: crimson"> "Feliz navidad Alina , te quiero mucho :3"</p>
         <p style="color: deeppink;">(PD: Hoy no pude darte tu regalo, así que lo guardaré hasta nuestro proximo encuentro :3)</p>
         <p style="color: goldenrod;">(No me sé buenas canciones navideñas, pero el Rock es como la mayonesa... </p>
-        <p style="color: goldenrod;">nunca está demás colorarle un poco más y combina bien con todo ;3)</p>
+        <p style="color: goldenrod;">nunca está demás colorarle un poco más y combina bien con todo ;3  ↓↓↓↓)</p>
+        <button>Da click acá :3</button>
+        <script>
+            const audio = new Audio("song.mp3");
+            const buttons = document.querySelectorAll("button");
+    
+            buttons.forEach(button => {
+                console.log('hola');
+            button.addEventListener("click", () => {
+            audio.play();
+      });
+    });
+    
+        </script>
+
     </class>
     <script>
         var hojas = "";
